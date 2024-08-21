@@ -1,11 +1,11 @@
-import useCounter from '../store/use-counter';
+import { useActions } from '../store/use-counter';
 
 function ManageCounter() {
-  const incrementCount = useCounter((state) => state.handleIncrementCount);
+  const { handleIncrementCount } = useActions();
 
   return (
     <button
-      onClick={incrementCount}
+      onClick={handleIncrementCount}
       className="mb-5 bg-black text-white text-lg font-bold"
     >
       Handle Counter

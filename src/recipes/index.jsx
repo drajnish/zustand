@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
-import useCounter from '../store/use-counter';
+import useCounter, { useActions } from '../store/use-counter';
 
 function Recipes() {
-  const fetchRecipes = useCounter((state) => state.fetchListOfRecipes);
   const recipeList = useCounter((state) => state.listOfRecipes);
 
+  const { fetchListOfRecipes } = useActions();
+
   useEffect(() => {
-    fetchRecipes();
+    fetchListOfRecipes();
   }, []);
 
   return (
